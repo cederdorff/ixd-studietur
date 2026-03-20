@@ -288,6 +288,15 @@ function render() {
     .join("");
 }
 
+function updateStudentButtonUI(button, student) {
+  const checked = isChecked(student);
+  button.classList.toggle("checked", checked);
+  const statusEl = button.querySelector(".status");
+  if (statusEl) {
+    statusEl.textContent = checked ? "Tjekket ind" : "Tryk for at tjekke ind";
+  }
+}
+
 listEl.addEventListener("click", (event) => {
   const button = event.target.closest(".student");
   if (!button) return;
@@ -296,7 +305,8 @@ listEl.addEventListener("click", (event) => {
   if (!student) return;
   setChecked(student, !isChecked(student));
   save();
-  render();
+  updateStudentButtonUI(button, student);
+  updateMeta();
 });
 
 searchEl.addEventListener("input", render);
