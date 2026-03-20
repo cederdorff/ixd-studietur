@@ -1,17 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Rasmus Cederdorff - RACE" />
-    <meta name="description" content="Project Template" />
+    <title>Studietur Amsterdam · Check-in</title>
     <link rel="stylesheet" href="app.css" />
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <title>Project Template</title>
   </head>
-
   <body>
-    <h1>Project Template</h1>
+    <div class="app">
+      <div class="topbar">
+        <h1>Studietur Amsterdam · Check-in</h1>
+        <div class="meta" id="meta">MDU-E25IXD</div>
+        <div class="trip-controls" role="tablist" aria-label="Vælg rejse">
+          <button id="tripOutbound" class="trip-btn active" type="button" role="tab" aria-selected="true">
+            Udrejse 23/3
+          </button>
+          <button id="tripReturn" class="trip-btn" type="button" role="tab" aria-selected="false">
+            Hjemrejse 27/3
+          </button>
+        </div>
+        <div class="controls">
+          <input id="search" type="search" placeholder="Søg efter navn..." />
+        </div>
+      </div>
+
+      <div id="list" class="list"></div>
+    </div>
 
     <script src="app.js"></script>
   </body>
